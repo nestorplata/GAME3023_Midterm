@@ -12,11 +12,11 @@ public class UI_Crafter : MonoBehaviour
     [SerializeField] private ItemSlot OutputTileScript;
 
     private List<GameObject> slots = new List<GameObject>();
-    private char[] CraftingGrid = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+    private char[] CraftingGrid = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }; //3X3 grid
     // Start is called before the first frame update
 
 
-    public void CreateCraftingTiles()
+    public void CreateCraftingTiles() // crays an array of empty Tiles
     {
         Vector2 Position = StartingTile.transform.position;
         for (int i = 0; i < 9; i++)
@@ -36,28 +36,23 @@ public class UI_Crafter : MonoBehaviour
         Destroy(StartingTile);
     }
 
-    public void UpdateItemsChar()
+    public void UpdateItemsChar()// Updates the grid for a matching recipe
     {
         for (int i = 0;i < CraftingGrid.Count(); i++)
         {
-            CraftingGrid[i] = slots[i].GetComponent<ItemSlot>().GetHeldItemSignifier();
+            CraftingGrid[i] = slots[i].GetComponent<ItemSlot>().GetHeldItemSignifier(); //Compiles Held Items On the grid and translate them to a char array
         }
         GetComponentInParent<CraftingManager>().CheckForRecipe(CraftingGrid, OutputTileScript);
     }
 
-    public void ReduceItems()
+    public void ReduceItems() // Consumes one of each item of grid
     {
-        ItemSlot TileToReturn= new ItemSlot();
         foreach (GameObject slot in slots)
         {
             ItemSlot SlotScript=slot.GetComponent<ItemSlot>();
-            if (SlotScript.ItemInSlotScript!=null)
+            if (SlotScript.CurrentItem!=null)
             {
-                SlotScript.ItemInSlotScript.ReduceAmount();
-            }
-            else
-            {
-                TileToReturn = SlotScript;
+                SlotScript.CurrentItem.ReduceAmount();
             }
 
         }

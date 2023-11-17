@@ -8,11 +8,9 @@ public class UI_Inventory : MonoBehaviour
 
 
     [SerializeField] private GameObject StartingTile;
-
-
     private List<GameObject> slots = new List<GameObject>();
 
-    public void CreateHoldingTiles()
+    public void CreateHoldingTiles() //Creates a set of Inventory tiles and saves them
     {
         Vector2 Position = StartingTile.transform.position;
         for (int i = 0; i < 36; i++)
@@ -39,14 +37,10 @@ public class UI_Inventory : MonoBehaviour
         }
         Destroy(StartingTile);
     }
-    public GameObject GetTile(int i)
-    {
-        return slots[i];
-    }
 
     public ItemSlot GetTileScript(int i)
     {
-        return GetTile(i).GetComponent<ItemSlot>();
+        return slots[i].GetComponent<ItemSlot>();
     }
 
 

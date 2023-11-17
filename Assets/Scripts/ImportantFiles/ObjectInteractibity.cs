@@ -10,7 +10,7 @@ public class ObjectInteractibity : MonoBehaviour,
 {
      //private Canvas canvas;
 
-    public ItemSlot PreviousSlotScript;
+    public ItemSlot CurrentSlotScript;
 
     public RectTransform rectTransform;
     
@@ -32,26 +32,25 @@ public class ObjectInteractibity : MonoBehaviour,
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        PreviousSlotScript.ItemInSlotScript = null;
-        PreviousSlotScript.SwitchOnBeginDrag();
+        CurrentSlotScript.CurrentItem = null; //Removes Itself from the previous tile
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
 
     }
     public void OnDrag(PointerEventData eventData)
     {
-
         rectTransform.anchoredPosition += eventData.delta;
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)       //OnDrop on ItemSlot happens before On EndDrag,
+
     {
 
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        if (PreviousSlotScript.AnchoredSlotPosition != rectTransform.anchoredPosition)
+        if (CurrentSlotScript.AnchoredSlotPosition != rectTransform.anchoredPosition)        //if there has been a change on current Slot, change positions
         {
-            rectTransform.anchoredPosition = PreviousSlotScript.AnchoredSlotPosition;
+            rectTransform.anchoredPosition = CurrentSlotScript.AnchoredSlotPosition;
         }
     }
 
@@ -75,7 +74,7 @@ public class ObjectInteractibity : MonoBehaviour,
         TextAmount.text = cuantity.ToString();
         if(cuantity <=0)
         {
-            PreviousSlotScript.ItemInSlotScript = null;
+            CurrentSlotScript.CurrentItem = null;
             Destroy(gameObject);
         }
     }

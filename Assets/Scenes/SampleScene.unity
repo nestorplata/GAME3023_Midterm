@@ -997,21 +997,21 @@ MonoBehaviour:
   - scriptableItem: {fileID: 11400000, guid: 861ac9388bc14cb4798d1fbf0020e024, type: 2}
     amount: 10
   - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
-    amount: 4
+    amount: 10
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 10
   - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
     amount: 4
   - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
-    amount: 4
+    amount: 10
   - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
-    amount: 4
+    amount: 10
   - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
-    amount: 4
+    amount: 10
   - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
-    amount: 4
+    amount: 10
   - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
-    amount: 4
-  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
-    amount: 4
+    amount: 10
   ItemPrefab: {fileID: 5579382747479507908, guid: 17c70be24683eb64e9361d1ccf574725, type: 3}
 --- !u!1 &1685746847 stripped
 GameObject:

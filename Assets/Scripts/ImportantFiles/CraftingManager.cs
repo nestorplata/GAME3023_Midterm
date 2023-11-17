@@ -31,7 +31,7 @@ public class CraftingManager : MonoBehaviour
         CreateStartingItems();
     }
 
-    public void CreateStartingItems()
+    public void CreateStartingItems()// Starting Items based of ItemCreationStruct and binds them to a tile
     {
         int i = 0;
         foreach (var ItemStruct in StartingItems)
@@ -41,7 +41,7 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
-    public void CheckForRecipe(char[] grid, ItemSlot OutputTile)
+    public void CheckForRecipe(char[] grid, ItemSlot OutputTile) //Checks Weather the grid Contains a recipe for an Item 
     {
         string CraftedRecipe = "";
         for (var i = 0; i < grid.Length; i++)
@@ -50,12 +50,12 @@ public class CraftingManager : MonoBehaviour
         }
         CraftedRecipe = CraftedRecipe.Trim();
 
-        if (OutputTile.ItemInSlotScript)
+        if (OutputTile.CurrentItem)
         {
-            Destroy(OutputTile.ItemInSlotScript.gameObject);
+            Destroy(OutputTile.CurrentItem.gameObject);
 
         }
-        foreach (var recipeScript in scriptableRecipes)
+        foreach (var recipeScript in scriptableRecipes)//Creates an object if a recipe is found
         {
             if (CraftedRecipe == GetRecipe(recipeScript))
             {
@@ -67,27 +67,27 @@ public class CraftingManager : MonoBehaviour
     }
 
 
-    public void CreateItem(ItemCreationStruct ItemStruct, ItemSlot Tile)
+    public void CreateItem(ItemCreationStruct ItemStruct, ItemSlot Tile) //Creates Item off a Struct and binds it to the Output Tile
     {
         ScriptableItem ScriptableItem= ItemStruct.scriptableItem;
         ObjectInteractibity ItemScript = Instantiate(ItemPrefab, transform).GetComponent<ObjectInteractibity>();
         ItemScript.transform.position = Tile.transform.position;
         ItemScript.SetProperties(ScriptableItem.sprite, ScriptableItem.ObjectName, ItemStruct.amount, ScriptableItem.GetSignifier());
-        Tile.ItemInSlotScript = ItemScript;
-        ItemScript.PreviousSlotScript = Tile;
+        Tile.CurrentItem = ItemScript;
+        ItemScript.CurrentSlotScript = Tile;
     }
 
-    public void CreateItem(ScriptableRecipe ScriptableRecipe, ItemSlot Tile)
+    public void CreateItem(ScriptableRecipe ScriptableRecipe, ItemSlot Tile)//Creates Item off a scriptable recipe and binds it to the Output Tile
     {
         ScriptableItem ScriptableItem = ScriptableRecipe.ScriptableItemOutput;
         ObjectInteractibity ItemScript = Instantiate(ItemPrefab, transform).GetComponent<ObjectInteractibity>();
         ItemScript.transform.position = Tile.transform.position;
         ItemScript.SetProperties(ScriptableItem.sprite, ScriptableItem.ObjectName, ScriptableRecipe.amount, ScriptableItem.GetSignifier());
-        Tile.ItemInSlotScript = ItemScript;
-        ItemScript.PreviousSlotScript = Tile;
+        Tile.CurrentItem = ItemScript;
+        ItemScript.CurrentSlotScript = Tile;
     }
 
-    public string GetRecipe(ScriptableRecipe scriptableRecipe)
+    public string GetRecipe(ScriptableRecipe scriptableRecipe) // scriptable Recipes are array organized Scriptable Items with one Item output
     {
         string recipe ="";
         foreach (ScriptableItem recipeItems in scriptableRecipe.RecipeScriptableItems)

@@ -15,7 +15,8 @@ MonoBehaviour:
   RecipeScriptableItems:
   - {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
   - {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+  - {fileID: 11400000, guid: eb442586b90d51840af569b7342c48c7, type: 2}
   - {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
   - {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
-  ScriptableItemOutput: {fileID: 11400000, guid: 6fb5084ef6b58d6409e74106748c4584, type: 2}
+  ScriptableItemOutput: {fileID: 11400000, guid: d65ee09356c2bab4ba3929abc3db92f5, type: 2}
   amount: 1
