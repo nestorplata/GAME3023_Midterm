@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fcfb4e5adac9fe41af5a602b314e577, type: 3}
-  m_Name: ItemPickaxe
+  m_Name: PlankItem
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 4d44e9797ff6bd54eaad0b0336751b0e, type: 3}
-  ObjectName: pickaxe
-  amount: 1
-  Signifier: 78
+  sprite: {fileID: 21300000, guid: e63a66238fa4f7942aaf72ddb478657a, type: 3}
+  ObjectName: plank
+  Signifier: 71

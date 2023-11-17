@@ -11,8 +11,10 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     public ObjectInteractibity ItemInSlotScript;
     public Vector2 AnchoredSlotPosition;
-    public int TileType = TyleSignifiers.InventoryTile;
 
+    [SerializeField]
+    private int TileType = TyleSignifiers.InventoryTile;
+    
     void Start()
     {
         AnchoredSlotPosition = GetComponent<RectTransform>().anchoredPosition +
@@ -21,37 +23,54 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag && !ItemInSlotScript)
+
+        if (eventData.pointerDrag && !ItemInSlotScript && 
+            TileType != TyleSignifiers.OutputTile)
         {
             ItemInSlotScript = eventData.pointerDrag.GetComponent<ObjectInteractibity>();
             ItemInSlotScript.rectTransform.anchoredPosition = AnchoredSlotPosition;
+            ItemInSlotScript.PreviousSlotScript.SwitchOnEndDrag();
+            SwitchOnDrop();
             ItemInSlotScript.PreviousSlotScript = this;
         }
-        TileOnDropFunctionality();
-
-
     }
 
-    public void TileOnDropFunctionality()
+    public void SwitchOnBeginDrag()
     {
+        UI_Crafter UI_CrafterScript = transform.GetComponentInParent<UI_Crafter>();
         switch (TileType)
         {
+            //case TyleSignifiers.OutputTile:
+            //    UI_CrafterScript.ReduceItems();
+            //    break;
             case TyleSignifiers.CraftingTile:
-                transform.GetComponentInParent<UI_Crafter>().UpdateItemsChar();
+                UI_CrafterScript.UpdateItemsChar();
                 break;
-
         }
     }
-    public void TileOnBeginFunctionality()
+
+    public void SwitchOnDrop()
     {
-        UI_Crafter uI_CrafterScript = transform.GetComponentInParent<UI_Crafter>();
+        UI_Crafter UI_CrafterScript = transform.GetComponentInParent<UI_Crafter>();
+        switch (TileType)
+        {
+
+            case TyleSignifiers.CraftingTile:
+                UI_CrafterScript.UpdateItemsChar();
+                break;
+        }
+    }
+
+    public void SwitchOnEndDrag()
+    {
+        UI_Crafter UI_CrafterScript = transform.GetComponentInParent<UI_Crafter>();
         switch (TileType)
         {
             case TyleSignifiers.OutputTile:
-                uI_CrafterScript.ReduceItems();
+                UI_CrafterScript.ReduceItems();
                 break;
             case TyleSignifiers.CraftingTile:
-                uI_CrafterScript.UpdateItemsChar();
+                transform.GetComponentInParent<UI_Crafter>().UpdateItemsChar();
                 break;
         }
     }

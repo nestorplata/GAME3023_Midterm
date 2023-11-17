@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ba690bd536cb8e42b1395b8c35d7e7a, type: 3}
-  m_Name: RecipePickaxes
+  m_Script: {fileID: 11500000, guid: 7fcfb4e5adac9fe41af5a602b314e577, type: 3}
+  m_Name: DoorItem
   m_EditorClassIdentifier: 
-  recipe: 'PPP S  S '
-  Output: {fileID: 11400000, guid: 6fb5084ef6b58d6409e74106748c4584, type: 2}
+  sprite: {fileID: 21300000, guid: 54a184213f549304b91821eb83925948, type: 3}
+  ObjectName: door
+  Signifier: 67

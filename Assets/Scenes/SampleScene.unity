@@ -978,15 +978,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI_InventoryScript: {fileID: 1149274674}
   UI_Crafter: {fileID: 305258046}
-  scriptableItems:
-  - {fileID: 11400000, guid: 275e98c4ba658a74d93f0dd0d167f4cb, type: 2}
-  - {fileID: 11400000, guid: c872ab140bf12534590870ca6f31875c, type: 2}
   scriptableRecipes:
   - {fileID: 11400000, guid: 86e756be616406643b0c0651bdd4a8b8, type: 2}
   - {fileID: 11400000, guid: 4416225e78de2cb40b36cad38ffad2b1, type: 2}
   - {fileID: 11400000, guid: 7357cc353e36e3043aa38ac1d67eb8d4, type: 2}
   - {fileID: 11400000, guid: b8814ffcaf21fd54e909d5179eab2cc0, type: 2}
   - {fileID: 11400000, guid: d3636d57b1bbe7c4ab0f19bb8602f169, type: 2}
+  - {fileID: 11400000, guid: 5bc97141ac2be6b4db5aedc904e4ca55, type: 2}
+  - {fileID: 11400000, guid: cee74a8b2317a2e4fa43647122627add, type: 2}
+  - {fileID: 11400000, guid: 2716b455386b788479c26ed9cf08b62a, type: 2}
+  - {fileID: 11400000, guid: 7fb3a1fc832db844ba12582c37ee8880, type: 2}
+  - {fileID: 11400000, guid: 8219ff511fe44024985d7c2e185989ec, type: 2}
+  StartingItems:
+  - scriptableItem: {fileID: 11400000, guid: 9f14fb0a8e92bdf458ed52a790e01bc5, type: 2}
+    amount: 10
+  - scriptableItem: {fileID: 11400000, guid: db2fb92f2e6cad44db2bf3018042b465, type: 2}
+    amount: 10
+  - scriptableItem: {fileID: 11400000, guid: 861ac9388bc14cb4798d1fbf0020e024, type: 2}
+    amount: 10
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 4
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 4
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 4
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 4
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 4
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 4
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 4
+  - scriptableItem: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+    amount: 4
   ItemPrefab: {fileID: 5579382747479507908, guid: 17c70be24683eb64e9361d1ccf574725, type: 3}
 --- !u!1 &1685746847 stripped
 GameObject:

@@ -6,7 +6,6 @@ public class ScriptableItem : ScriptableObject
 {
     public Sprite sprite;
     public string ObjectName;
-    public int amount;
 
     [SerializeField]
     private char Signifier;

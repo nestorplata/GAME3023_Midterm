@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ba690bd536cb8e42b1395b8c35d7e7a, type: 3}
-  m_Name: RecipeTorch
+  m_Name: SlabsRecipe
   m_EditorClassIdentifier: 
-  recipe: C  S
-  Output: {fileID: 11400000, guid: 30c1fdf4bb4f7c147939486927e0d438, type: 2}
+  RecipeScriptableItems:
+  - {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+  - {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+  - {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+  ScriptableItemOutput: {fileID: 11400000, guid: e0e01fa587e8b1c43a557e53c72c2074, type: 2}
+  amount: 6

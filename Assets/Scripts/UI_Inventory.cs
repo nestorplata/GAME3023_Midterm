@@ -50,7 +50,7 @@ public class UI_Inventory : MonoBehaviour
     }
 
 
-    //PreviousSlot = rectTransform.anchoredPosition;
+
 
 
 }

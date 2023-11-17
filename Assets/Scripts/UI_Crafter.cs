@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UI_Crafter : MonoBehaviour
@@ -46,6 +47,7 @@ public class UI_Crafter : MonoBehaviour
 
     public void ReduceItems()
     {
+        ItemSlot TileToReturn= new ItemSlot();
         foreach (GameObject slot in slots)
         {
             ItemSlot SlotScript=slot.GetComponent<ItemSlot>();
@@ -53,9 +55,15 @@ public class UI_Crafter : MonoBehaviour
             {
                 SlotScript.ItemInSlotScript.ReduceAmount();
             }
+            else
+            {
+                TileToReturn = SlotScript;
+            }
+
         }
         UpdateItemsChar();
     }
+
 
 
 }

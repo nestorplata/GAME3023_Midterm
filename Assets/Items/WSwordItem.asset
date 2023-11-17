@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fcfb4e5adac9fe41af5a602b314e577, type: 3}
-  m_Name: ItemCoal
+  m_Name: WSwordItem
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 49ba954271b770340a9b433e26bed010, type: 3}
-  ObjectName: coal
-  amount: 1
-  Signifier: 67
+  sprite: {fileID: 21300000, guid: ed526a4bd5d823847b62d0c8f5e0d35d, type: 3}
+  ObjectName: sword
+  Signifier: 69

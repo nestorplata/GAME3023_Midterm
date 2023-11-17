@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ba690bd536cb8e42b1395b8c35d7e7a, type: 3}
-  m_Name: RecipeStick
+  m_Script: {fileID: 11500000, guid: 7fcfb4e5adac9fe41af5a602b314e577, type: 3}
+  m_Name: WSlabsItem
   m_EditorClassIdentifier: 
-  recipe: P  P
-  Output: {fileID: 11400000, guid: db2fb92f2e6cad44db2bf3018042b465, type: 2}
+  sprite: {fileID: 21300000, guid: 2d3f0fef5429d0a44a67ab02e4dfdab5, type: 3}
+  ObjectName: woodenslabs
+  Signifier: 77

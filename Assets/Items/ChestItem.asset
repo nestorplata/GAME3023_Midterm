@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ba690bd536cb8e42b1395b8c35d7e7a, type: 3}
-  m_Name: RecipePlank
+  m_Script: {fileID: 11500000, guid: 7fcfb4e5adac9fe41af5a602b314e577, type: 3}
+  m_Name: ChestItem
   m_EditorClassIdentifier: 
-  recipe: W
-  Output: {fileID: 11400000, guid: e40bc11c3d1022d49ab99048bb6c8b40, type: 2}
+  sprite: {fileID: 21300000, guid: e9218f2c55348c445ae13be05bc77fec, type: 3}
+  ObjectName: Chest
+  Signifier: 65

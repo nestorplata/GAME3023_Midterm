@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fcfb4e5adac9fe41af5a602b314e577, type: 3}
-  m_Name: ItemWood
+  m_Name: TorchItem
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: de3a5e30f1e31484ca38211a61219def, type: 3}
-  ObjectName: wood
-  amount: 10
-  Signifier: 87
+  sprite: {fileID: 21300000, guid: c6fb9f2b261ebec47b59efcbdf963760, type: 3}
+  ObjectName: torch
+  Signifier: 73

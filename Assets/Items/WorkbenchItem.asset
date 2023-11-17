@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fcfb4e5adac9fe41af5a602b314e577, type: 3}
-  m_Name: ItemCoal
+  m_Name: WorkbenchItem
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 49ba954271b770340a9b433e26bed010, type: 3}
-  ObjectName: coal
-  amount: 10
-  Signifier: 67
+  sprite: {fileID: 21300000, guid: f61f36a816ec81e498d274ba9eac64f8, type: 3}
+  ObjectName: workbench
+  Signifier: 75

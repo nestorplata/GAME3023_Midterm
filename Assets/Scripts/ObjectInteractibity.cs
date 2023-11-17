@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class ObjectInteractibity : MonoBehaviour, 
+public class ObjectInteractibity : MonoBehaviour,
     IBeginDragHandler, IEndDragHandler, IDragHandler
 {
      //private Canvas canvas;
@@ -19,7 +19,7 @@ public class ObjectInteractibity : MonoBehaviour,
     private Text TextAmount;
 
     private int cuantity;
-    private char signifier = 'E';
+    private char signifier = ' ';
 
     private void Awake()
     {
@@ -33,29 +33,27 @@ public class ObjectInteractibity : MonoBehaviour,
     public void OnBeginDrag(PointerEventData eventData)
     {
         PreviousSlotScript.ItemInSlotScript = null;
-        PreviousSlotScript.TileOnBeginFunctionality();
+        PreviousSlotScript.SwitchOnBeginDrag();
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
 
     }
     public void OnDrag(PointerEventData eventData)
     {
-        
+
         rectTransform.anchoredPosition += eventData.delta;
     }
 
-
-    
     public void OnEndDrag(PointerEventData eventData)
     {
+
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        if(PreviousSlotScript.AnchoredSlotPosition!= rectTransform.anchoredPosition)
+        if (PreviousSlotScript.AnchoredSlotPosition != rectTransform.anchoredPosition)
         {
             rectTransform.anchoredPosition = PreviousSlotScript.AnchoredSlotPosition;
         }
     }
-
 
     public void SetProperties(Sprite sprite, string name, int cuanity, char signifier)
     {
@@ -81,4 +79,6 @@ public class ObjectInteractibity : MonoBehaviour,
             Destroy(gameObject);
         }
     }
+
+
 }
