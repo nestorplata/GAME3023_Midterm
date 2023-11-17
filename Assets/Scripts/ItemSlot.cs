@@ -27,30 +27,46 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             ItemInSlotScript.rectTransform.anchoredPosition = AnchoredSlotPosition;
             ItemInSlotScript.PreviousSlotScript = this;
         }
-        TypeSwitchFunctionality();
+        TileOnDropFunctionality();
 
 
     }
 
-    public void TypeSwitchFunctionality()
+    public void TileOnDropFunctionality()
     {
         switch (TileType)
         {
             case TyleSignifiers.CraftingTile:
                 transform.GetComponentInParent<UI_Crafter>().UpdateItemsChar();
                 break;
+
         }
     }
-    
+    public void TileOnBeginFunctionality()
+    {
+        UI_Crafter uI_CrafterScript = transform.GetComponentInParent<UI_Crafter>();
+        switch (TileType)
+        {
+            case TyleSignifiers.OutputTile:
+                uI_CrafterScript.ReduceItems();
+                break;
+            case TyleSignifiers.CraftingTile:
+                uI_CrafterScript.UpdateItemsChar();
+                break;
+        }
+    }
+
+
     public char GetHeldItemSignifier()
     {
         if (ItemInSlotScript)
         {
             return ItemInSlotScript.GetSignifier();
+
         }
         else
         {
-            return 'E';
+            return ' ';
         }
 
     }

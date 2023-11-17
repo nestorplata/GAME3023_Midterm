@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba690bd536cb8e42b1395b8c35d7e7a, type: 3}
   m_Name: RecipeTorch
   m_EditorClassIdentifier: 
-  recipe: CEES
+  recipe: C  S
   Output: {fileID: 11400000, guid: 30c1fdf4bb4f7c147939486927e0d438, type: 2}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 5ad88117ce3958b4ba5197ce4a8eb09e, type: 3}
   ObjectName: Stick
-  CharSignifier: 83
   amount: 4
+  Signifier: 83

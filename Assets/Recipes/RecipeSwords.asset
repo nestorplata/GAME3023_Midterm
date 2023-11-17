@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba690bd536cb8e42b1395b8c35d7e7a, type: 3}
   m_Name: RecipeSwords
   m_EditorClassIdentifier: 
-  recipe: EWEEWEESE
+  recipe: P  P  S
   Output: {fileID: 11400000, guid: bc4584fdd8ce73740b6f40bd9a1eace4, type: 2}

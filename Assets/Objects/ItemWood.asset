@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: de3a5e30f1e31484ca38211a61219def, type: 3}
   ObjectName: wood
-  CharSignifier: 87
   amount: 10
+  Signifier: 87

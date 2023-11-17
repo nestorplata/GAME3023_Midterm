@@ -18,6 +18,7 @@ public class ObjectInteractibity : MonoBehaviour,
     private CanvasGroup canvasGroup;
     private Text TextAmount;
 
+    private int cuantity;
     private char signifier = 'E';
 
     private void Awake()
@@ -32,10 +33,9 @@ public class ObjectInteractibity : MonoBehaviour,
     public void OnBeginDrag(PointerEventData eventData)
     {
         PreviousSlotScript.ItemInSlotScript = null;
-        PreviousSlotScript.TypeSwitchFunctionality();
+        PreviousSlotScript.TileOnBeginFunctionality();
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
-        Debug.Log(signifier);
 
     }
     public void OnDrag(PointerEventData eventData)
@@ -43,6 +43,7 @@ public class ObjectInteractibity : MonoBehaviour,
         
         rectTransform.anchoredPosition += eventData.delta;
     }
+
 
     
     public void OnEndDrag(PointerEventData eventData)
@@ -55,10 +56,12 @@ public class ObjectInteractibity : MonoBehaviour,
         }
     }
 
+
     public void SetProperties(Sprite sprite, string name, int cuanity, char signifier)
     {
         Image.sprite = sprite;
         gameObject.name = name;
+        this.cuantity = cuanity;
         TextAmount.text = cuanity.ToString();
         this.signifier = signifier;
     }
@@ -66,5 +69,16 @@ public class ObjectInteractibity : MonoBehaviour,
     public char GetSignifier()
     {
         return signifier;
+    }
+
+    public void ReduceAmount()
+    {
+        cuantity--;
+        TextAmount.text = cuantity.ToString();
+        if(cuantity <=0)
+        {
+            PreviousSlotScript.ItemInSlotScript = null;
+            Destroy(gameObject);
+        }
     }
 }

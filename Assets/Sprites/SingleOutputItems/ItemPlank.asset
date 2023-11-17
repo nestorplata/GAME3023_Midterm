@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: e63a66238fa4f7942aaf72ddb478657a, type: 3}
   ObjectName: plank
-  CharSignifier: 80
   amount: 4
+  Signifier: 80

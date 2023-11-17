@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class UI_Crafter : MonoBehaviour
 {
 
     [SerializeField] private GameObject StartingTile;
-    [SerializeField] private GameObject OutputTile;
+    [SerializeField] private ItemSlot OutputTileScript;
 
     private List<GameObject> slots = new List<GameObject>();
-    private char[] OrderedItemSignifiers = { 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'};
+    private char[] CraftingGrid = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
     // Start is called before the first frame update
 
 
@@ -36,9 +37,25 @@ public class UI_Crafter : MonoBehaviour
 
     public void UpdateItemsChar()
     {
-        for (int i = 0;i < OrderedItemSignifiers.Count(); i++)
+        for (int i = 0;i < CraftingGrid.Count(); i++)
         {
-            OrderedItemSignifiers[i] = slots[i].GetComponent<ItemSlot>().GetHeldItemSignifier();
+            CraftingGrid[i] = slots[i].GetComponent<ItemSlot>().GetHeldItemSignifier();
         }
+        GetComponentInParent<CraftingManager>().CheckForRecipe(CraftingGrid, OutputTileScript);
     }
+
+    public void ReduceItems()
+    {
+        foreach (GameObject slot in slots)
+        {
+            ItemSlot SlotScript=slot.GetComponent<ItemSlot>();
+            if (SlotScript.ItemInSlotScript!=null)
+            {
+                SlotScript.ItemInSlotScript.ReduceAmount();
+            }
+        }
+        UpdateItemsChar();
+    }
+
+
 }
